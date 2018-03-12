@@ -1,0 +1,8 @@
+{
+  "name": "blooddonation",
+  "app_id": "96a92a9f",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
