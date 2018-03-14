@@ -1,0 +1,32 @@
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="sidebar-menu">
+    <div class="user-pic">
+      <ion-row class="img-name-row">
+        <ion-col>
+          <img class="user-img" src="{{imageUrl}}">
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col *ngIf="isLoggedin()">
+          <p class="user-name">{{name | uppercase}}</p>
+        </ion-col>
+      </ion-row>
+    </div>
+    <ion-list>
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+          {{p.title}}
+        </button>
+    </ion-list>
+    <button ion-item (click)="logout()" menuClose class="menu-item">
+      {{'Logout'| translate}}
+    </button>
+  </ion-content>
+
+</ion-menu>
+<ion-nav #content [root]="rootPage"></ion-nav>

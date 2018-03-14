@@ -1,0 +1,48 @@
+<!--
+  Generated template for the HomePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle icon-only>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>home</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-card style="background-color:rgb(255, 209, 81)">
+    <ion-card-header>
+      <h1 class="card-title-sub" text-wrap text-center>Welcome to Blood Donation App by JCI</h1>
+    </ion-card-header>
+    <ion-card-content text-center>
+      Track your blood donation here.
+    </ion-card-content>
+  </ion-card>
+  <button ion-button block (click)="logout()">
+        Request Blood
+  </button>
+
+  <button ion-button block (click)="logout()">
+      Update Blood Donation Date
+</button>
+
+  <ion-card style="background-color:rgb(81, 255, 246)">
+    <ion-card-header>
+      <h1 class="card-title-sub" text-wrap text-center>Blood Donation History</h1>
+    </ion-card-header>
+    <ion-card-content text-center>
+      {{userDetails.lastDonation}}
+    </ion-card-content>
+  </ion-card>
+
+
+
+</ion-content>

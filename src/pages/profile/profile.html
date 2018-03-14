@@ -1,0 +1,136 @@
+<ion-header align-title="center">
+  <ion-navbar>
+    <button ion-button menuToggle icon-only>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>Your Details</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="login">
+    <ion-row>
+      <img class="img" [src]="url"><br>
+    </ion-row>
+    <ion-row>
+      <input type="file" name="file" id="file" class="inputfile" (change)="readUrl($event)">
+      <label for="file" class="upload">
+                <ion-icon ios="ios-cloud-upload" md="md-cloud-upload"></ion-icon>
+            </label>
+    </ion-row>
+    <p class="name">{{profileDetails.name}}</p>
+    <hr/>
+  </div>
+  <form #myForm="ngForm" (ngSubmit)="postData()">
+
+    <ion-item>
+      <ion-label floating>Name</ion-label>
+      <ion-input type="string" [(ngModel)]="profileDetails.name" id="name" name="name" required #name="ngModel"></ion-input>
+    </ion-item>
+    <span *ngIf="name.errors">
+          <span [hidden]="!name.errors.required">
+              <ion-label style="color: red; margin-left: 16px;"> * required </ion-label>
+          </span>
+    </span>
+
+    <ion-item>
+      <ion-label floating>Email</ion-label>
+      <ion-input type="string" [(ngModel)]="profileDetails.email" id="email" name="email" required #name="ngModel"></ion-input>
+
+    </ion-item>
+    <span *ngIf="name.errors">
+          <span [hidden]="!name.errors.required">
+              <ion-label style="color: red; margin-left: 16px;"> * required </ion-label>
+          </span>
+    </span>
+
+    <ion-item>
+      <ion-label floating>Phone number</ion-label>
+      <ion-input type="string" [(ngModel)]="profileDetails.phone" id="phone" name="phone" required #name="ngModel"></ion-input>
+
+    </ion-item>
+    <span *ngIf="name.errors">
+          <span [hidden]="!name.errors.required">
+              <ion-label style="color: red; margin-left: 16px;"> * required </ion-label>
+          </span>
+    </span>
+
+    <!-- <ion-item>
+      <ion-label floating>Name of the Bunk</ion-label>
+      <ion-input type="string" [(ngModel)]="item.name_of_retail_firm" id="bunkName" name="bunkName" required #name="ngModel"></ion-input>
+
+    </ion-item>
+    <span *ngIf="name.errors">
+          <span [hidden]="!name.errors.required">
+              <ion-label style="color: red; margin-left: 16px;"> * required </ion-label>
+          </span>
+    </span> -->
+
+    <ion-item>
+      <ion-label floating>
+        <ion-icon name="calendar"></ion-icon>
+        Last Blood Donated on:
+      </ion-label>
+      <ion-datetime type="date" displayFormat="DD/MM/YYYY" [ngModel]="profileDetails.lastDonation" id="lastDonation" name="lastDonation"
+        required #name="ngModel" min="1990"></ion-datetime>
+    </ion-item>
+    <!-- <ion-item>
+      <ion-label floating>Regisration Type</ion-label>
+      <ion-input type="string" name="RegType" [(ngModel)]="item.company_registration_information.registration_type"></ion-input>
+    </ion-item> -->
+    <!-- <ion-item>
+      <ion-label floating>Partner</ion-label>
+      <ion-input type="string" name="partner" [(ngModel)]="item.company_registration_information.partner.name"></ion-input>
+    </ion-item> -->
+
+    <ion-item>
+      <ion-label floating>Blood Type</ion-label>
+      <ion-input type="string" [(ngModel)]="profileDetails.bloodType" id="bloodType" name="bloodType" required #name="ngModel"></ion-input>
+
+    </ion-item>
+    <span *ngIf="name.errors">
+          <span [hidden]="!name.errors.required">
+              <ion-label style="color: red; margin-left: 16px;"> * required </ion-label>
+          </span>
+    </span>
+
+    <ion-item>
+      <ion-label floating>Adress</ion-label>
+      <ion-input type="string" [(ngModel)]="profileDetails.adress" id="adress" name="adress" required #name="ngModel"></ion-input>
+
+    </ion-item>
+    <span *ngIf="name.errors">
+          <span [hidden]="!name.errors.required">
+              <ion-label style="color: red; margin-left: 16px;"> * required </ion-label>
+          </span>
+    </span>
+
+    <ion-item>
+      <ion-label floating>City</ion-label>
+      <ion-input type="string" [(ngModel)]="profileDetails.city" id="city" name="city" required #name="ngModel"></ion-input>
+
+    </ion-item>
+    <span *ngIf="name.errors">
+          <span [hidden]="!name.errors.required">
+              <ion-label style="color: red; margin-left: 16px;"> * required </ion-label>
+          </span>
+    </span>
+
+    <ion-item>
+      <ion-label floating>District</ion-label>
+      <ion-input type="string" [(ngModel)]="profileDetails.district" id="district" name="district" required #name="ngModel"></ion-input>
+
+    </ion-item>
+    <span *ngIf="name.errors">
+          <span [hidden]="!name.errors.required">
+              <ion-label style="color: red; margin-left: 16px;"> * required </ion-label>
+          </span>
+    </span>
+
+    <ion-item>
+      <button [disabled]="!myForm.form.valid" type="submit" ion-button block>Submit</button>
+    </ion-item>
+  </form>
+
+</ion-content>
